@@ -69,8 +69,8 @@ var zone9 = $("#zone9");
 
 // 2-3) winning conditions 
 
-// $(".zone").on("click",function (){
-    function checkWinner() {
+$(".zone").on("click",function (){
+    // function checkWinner() {
 if (
 zone1.hasClass("x") && zone2.hasClass("x") && zone3hasClass("x")
 ||
@@ -125,14 +125,14 @@ turn = 0;
         turn = 0;
     }
 
-    else if ($(this).hasClass("disable")) {
+    if ($(this).hasClass("disable")) {
           $(this).unbind("click");
-          alert("filled");
+        //   alert("filled");
     // } else if ($(this).hasClass("o")) {
     //     $(this).unbind("click");
     } 
 
-}
+});
 
 //  disabling multiple clicks 
 
@@ -155,8 +155,7 @@ $("#reset").on("click",function (){
 
 
 
-
-checkWinner();
+// checkWinner();
 
 });
 
