@@ -1,32 +1,20 @@
 h1 {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
-  color: slategray;
+  color: linen;
 }
  .container {
     margin: 0 auto;
     padding: 0;
-    border-radius: 25px;
     width: 50%;
     height: 50%;
-
   }
   
-  /* .zone {
-    width: 100px;
-    height: 100px;
-    border: solid black;
-    margin: 20px;
-    display: inline-block;
-    transition: 0.5s all;
-  } */
   
-
   table ,td ,tr {
     margin-left:auto; 
     margin-right:auto;
-border: 10px solid #303C42;
+border: 10px solid lightslategray;
 border-collapse: collapse;
 border-spacing: 0;
 
@@ -34,15 +22,17 @@ border-spacing: 0;
   }
 
   td,tr {
+    
+    font-size: 55px;
     padding: 20px;
     align-content: center;
     width: 80px;
     height: 80px;
-
   }
 
 
 .hover {
+  cursor: pointer;
 background-color:cornsilk;
   }
 
@@ -54,3 +44,34 @@ background-color:cornsilk;
   .o {
     background-color: blueviolet;
   }
+
+
+
+  body {
+    background: #303C42;
+    color: dimgray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+
+  #reset {
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    border: 0;
+    background: lightslategray;
+    color: linen;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  #reset:hover {
+    cursor: pointer;
+    background-color:cornsilk;
+    color: #303C42;
+      }
+
+
