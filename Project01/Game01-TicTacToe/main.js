@@ -12,7 +12,7 @@ $(document).ready(function() {
 // if a zone is locked you cannot re-click it
 // Decide winning conditions / scenarios 
 
-
+var winner = "";
 var turn = 0;
 var x = "x";
 var o = "o";
@@ -37,6 +37,7 @@ var zone9 = $("#zone9");
 
 
 //1)
+
  $(".zone").on("mouseenter",function(event) {
         $(this).addClass("hover");
         $(".zone").on("mouseout",function (event){
@@ -93,10 +94,11 @@ $(".zone").removeClass("disable");
 $(".zone").removeClass("o");
 $(".zone").removeClass("x");
 turn = 0;
+winner = x;
 
-} else if 
+} if 
 (
-    zone1.hasClass("o") && zone2.hasClass("o") && zone3hasClass("o")
+    zone1.hasClass("o") && zone2.hasClass("o") && zone3.hasClass("o")
     ||
     zone4.hasClass("o") && zone5.hasClass("o") && zone6.hasClass("o")
     ||
@@ -117,6 +119,7 @@ turn = 0;
     $(".zone").removeClass("o");
     $(".zone").removeClass("x");
     turn = 0;
+    winner = o;
  
     } else if (turn === 9) {
         alert("It's a tie");
@@ -124,13 +127,16 @@ turn = 0;
         $(".zone").removeClass("x");
         turn = 0;
     }
+ if ((winner === o) || (winner === x)) {
+    $(".zone").off ("click");
+    $(".mainTable").empty();
+}
+    // if ($(this).hasClass("disable")) {
+    //       $(this).unbind("click");
+    //     //   alert("filled");
+    // // } else if ($(this).hasClass("o")) {
+    // //     $(this).unbind("click");
 
-    if ($(this).hasClass("disable")) {
-          $(this).unbind("click");
-        //   alert("filled");
-    // } else if ($(this).hasClass("o")) {
-    //     $(this).unbind("click");
-    } 
 
 });
 
@@ -138,9 +144,9 @@ turn = 0;
 
 
 
-// reset function 
+// reset function  - fix problems here!!
 
-$("#reset").on("click",function (){
+$("#reset").on("click",function (){ 
 
     $(".zone").empty()
     $(".zone").removeClass("x");
