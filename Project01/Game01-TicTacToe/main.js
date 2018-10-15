@@ -11,33 +11,35 @@ $(document).ready(function() {
 // Each played turn disable clicks for current player / display the other player symbol 
 // if a zone is locked you cannot re-click it
 // Decide winning conditions / scenarios 
+// Reset game 
+// Play again should call the entire game 
 
-var winner = "";
-var turn = 0;
-var x = "x";
-var o = "o";
-var zone1 = $("#zone1");
-var zone2 = $("#zone2");
-var zone3 = $("#zone3");
-var zone4 = $("#zone4");
-var zone5 = $("#zone5");
-var zone6 = $("#zone6");
-var zone7 = $("#zone7");
-var zone8 = $("#zone8");
-var zone9 = $("#zone9");
-
-
+$("#Again").hide();
 // var mainZone4 = [ zone1,zone4 ,zone7];
 // var mainZone5 = [ zone2,zone5 ,zone8];
 // var mainZone6 = [ zone3,zone6 ,zone9];
 // var mainZone7 = [ zone3,zone5 ,zone7];
 // var mainZone8 = [ zone1,zone5,zone9];
-
-
-
+mainGame();
+function mainGame (){
+    $("#reset").show();
+    // debugger;
+    var winner = "";
+    var turn = 0;
+    var x = "x";
+    var o = "o";
+    var zone1 = $("#zone1");
+    var zone2 = $("#zone2");
+    var zone3 = $("#zone3");
+    var zone4 = $("#zone4");
+    var zone5 = $("#zone5");
+    var zone6 = $("#zone6");
+    var zone7 = $("#zone7");
+    var zone8 = $("#zone8");
+    var zone9 = $("#zone9");
+    
 
 //1)
-
  $(".zone").on("mouseenter",function(event) {
         $(this).addClass("hover");
         $(".zone").on("mouseout",function (event){
@@ -69,11 +71,11 @@ var zone9 = $("#zone9");
 
 
 // 2-3) winning conditions 
-
+// function checkWinner() {
 $(".zone").on("click",function (){
-    // function checkWinner() {
+
 if (
-zone1.hasClass("x") && zone2.hasClass("x") && zone3hasClass("x")
+zone1.hasClass("x") && zone2.hasClass("x") && zone3.hasClass("x")
 ||
 zone4.hasClass("x") && zone5.hasClass("x") && zone6.hasClass("x")
 ||
@@ -95,7 +97,7 @@ $(".zone").removeClass("o");
 $(".zone").removeClass("x");
 turn = 0;
 winner = x;
-
+$("#Again").show();
 } if 
 (
     zone1.hasClass("o") && zone2.hasClass("o") && zone3.hasClass("o")
@@ -120,16 +122,20 @@ winner = x;
     $(".zone").removeClass("x");
     turn = 0;
     winner = o;
+    $("#Again").show();
  
     } else if (turn === 9) {
         alert("It's a tie");
         $(".zone").removeClass("o");
         $(".zone").removeClass("x");
         turn = 0;
+        $("#Again").show();
     }
- if ((winner === o) || (winner === x)) {
+ if ((winner === o) || (winner === x) || (turn === 9)) {
     $(".zone").off ("click");
-    $(".mainTable").empty();
+    $(".zone").removeClass("hover");
+    $("#reset").hide();
+ 
 }
     // if ($(this).hasClass("disable")) {
     //       $(this).unbind("click");
@@ -139,7 +145,7 @@ winner = x;
 
 
 });
-
+// }
 //  disabling multiple clicks 
 
 
@@ -157,11 +163,16 @@ $("#reset").on("click",function (){
 
 });
 
+}
+
+    $("#Again").on("click",function (){ 
+        $(".zone").removeClass("x").removeClass("o").removeClass("hover").text("").off();
+        mainGame();
+        // checkWinner();
+});
 
 
 
-
-// checkWinner();
 
 });
 

@@ -55,7 +55,7 @@ background-color:cornsilk;
   }
 
 
-  #reset {
+ button {
     margin: 20px;
     display: block;
     margin-left: auto;
@@ -68,10 +68,14 @@ background-color:cornsilk;
     height: 30px;
     border-radius: 5px;
   }
-  #reset:hover {
+  button:hover {
     cursor: pointer;
     background-color:cornsilk;
     color: #303C42;
       }
 
 
+
+#Again {
+  display: none;
+}
