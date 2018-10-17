@@ -1,81 +1,89 @@
 h1 {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
-  font-weight: lighter;
-  color: linen;
+  font-weight: 100;
+  color: whitesmoke;
+  font-size: 50px;
 }
- .container {
-    margin: 0 auto;
-    padding: 0;
-    width: 50%;
-    height: 50%;
-  }
-  
-  
-  table ,td ,tr {
-    margin-left:auto; 
-    margin-right:auto;
-border: 10px solid lightslategray;
-border-collapse: collapse;
-border-spacing: 0;
 
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  height: 50%;
+}
 
-  }
+table,
+td,
+tr {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid whitesmoke;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-  td,tr {
-    
-    font-size: 55px;
-    padding: 20px;
-    align-content: center;
-    width: 80px;
-    height: 80px;
-  }
+td,
+tr {
+  font-size: 60px;
+  padding: 20px;
+  align-content: center;
+  width: 80px;
+  height: 80px;
+}
 
+#mainTable {
+  border-radius: 25px;
+}
 
 .hover {
   cursor: pointer;
-background-color:cornsilk;
-  }
-
-  .x {
-   background-color: cadetblue;
-
-  }
-
-  .o {
-    background-color: blueviolet;
-  }
-
-
-
-  body {
-    background: #303C42;
-    color: dimgray;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-  }
-
-
- button {
-    margin: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 12px;
-    border: 0;
-    background: lightslategray;
-    color: linen;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-  }
-  button:hover {
-    cursor: pointer;
-    background-color:cornsilk;
-    color: #303C42;
-      }
-
-
-
-#Again {
-  display: none;
+  background-color: rgba(255, 251, 251, 0.884);
 }
+
+.x {
+  background-color: rgb(63, 191, 170);
+}
+
+.o {
+  background-color: rgb(244, 94, 251);
+}
+
+body {
+  color: rgba(255, 251, 251, 0.884);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  text-align: center;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgb(63, 94, 170) 0%,
+    rgb(128, 80, 251) 100%
+  );
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  border: 1.5px solid white;
+  background: #2f428a;
+  color: rgb(21, 202, 202);
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  color: #303c42;
+}
+
+/* #Again {
+  display: none;
+} */
