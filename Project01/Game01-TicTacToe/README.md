@@ -2,7 +2,7 @@
 
 ![Game](tictactoe.png)
 
-### [ Game Link](https://atheer10.github.io/Projects---WDI/Project01/Game01-TicTacToe/)
+### [ Game Link](https://atheer10.github.io/Projects---WDI/Project01/Game01-TicTacToe/myLanding/index.html)
 
 ## Description :
 
